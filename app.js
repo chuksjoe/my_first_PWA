@@ -20,6 +20,6 @@ async function fetchTrending(){
 }
 
 function createMeme(e){
-	const result = `<h3>${e.title}</h3><img scr="${e.images.fixed_width.url}">`;
+	const result = `<h3>${e.title}</h3><img scr="${e.images.original.url}" alt="${e.title}">`;
 	return result;
 }
