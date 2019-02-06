@@ -13,13 +13,27 @@ window.addEventListener('load', async eve => {
 async function fetchTrending(){
 	const apiKey = '1jHrig4xyEykjl3nnVeMoCHPzRb3o7Lu';
 	const main = document.getElementById('main');
-	const res = await fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=25`);
+	const res = await fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=10`);
 	const json = await res.json();
 	
-	main.innerHTML = json.data.map(createMeme).join('\n');
+	// for(let i = 0; i < json.data.length; i++){
+		// main.appendChild((createMeme(json.data[i])));
+	// }
+	json.data.map(e => {
+		main.appendChild((createMeme(e)));
+	});
 }
 
 function createMeme(e){
-	const result = `<h3>${e.title}</h3><img scr="${e.images.original.url}" alt="${e.title}">`;
-	return result;
+	const ele = document.createElement('div');
+	const h3 = document.createElement('h3');
+	const img = document.createElement('img');
+	
+	h3.innerHTML = e.title;
+	img.setAttribute('src', e.images.original.url);
+	img.setAttribute('alt', e.title);
+	
+	ele.append(h3, img);
+	
+	return ele;
 }
