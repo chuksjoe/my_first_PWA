@@ -1,5 +1,6 @@
 const staticAssets = [
 	'./',
+	'./favicon.png',
 	'./styles.css',
 	'./app.js'
 ];
