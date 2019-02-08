@@ -2,16 +2,12 @@
 	"name": "Meme",
 	"short_name": "Meme",
 	"icon": [{
-		"src": "url",
-		"sizes": "128X128",
+		"src": "/g853.png",
+		"sizes": "144X144",
 		"type": "image/png"
 	},{
 		"src": "url",
-		"sizes": "128X128",
-		"type": "image/png"
-	},{
-		"src": "url",
-		"sizes": "128X128",
+		"sizes": "196X196",
 		"type": "image/png"
 	}],
 	"start_url": "index.html",
